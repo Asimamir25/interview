@@ -1,7 +1,8 @@
 // import { Schema, model } from "mongoose";
 let mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 var jwt = require("jsonwebtoken");
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
   username: { type: "string", default: "" },
   email: { type: "string", default: "" },
   password: {
@@ -15,5 +16,5 @@ const UserSchema = new mongoose.Schema({
 //   return next();
 // };
 
-const User = mongoose.model("User", UserSchema);
+const User = model("User", UserSchema);
 module.exports = User;
