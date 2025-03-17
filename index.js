@@ -5,7 +5,7 @@ connectDb();
 const app = express();
 
 app.use(express.json());
-app.use("/api/user", router);
+app.use("/api/auth", router);
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
