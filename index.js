@@ -4,7 +4,13 @@ const cors = require("cors");
 const router = require("./routes/TaskRoutes");
 connectDb();
 const app = express();
-app.use(cors());
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://todomern-beryl.vercel.app", // Allow your Vercel frontend
+  })
+);
+
 app.use(express.json());
 app.use("/api", router);
 app.get("/", function (req, res) {
